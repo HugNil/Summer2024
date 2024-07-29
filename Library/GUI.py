@@ -10,7 +10,7 @@ class GUI:
     def __init__(self, root):
         self.root = root
         self.root.title("Library Management System")
-        
+
         self.logger = Logger()
         self.user = User()
 
