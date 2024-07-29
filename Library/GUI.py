@@ -10,11 +10,20 @@ class GUI:
     def __init__(self, root):
         self.root = root
         self.root.title("Library Management System")
-        self.root.geometry("400x300")
+        
         self.logger = Logger()
         self.user = User()
 
-        self.create_pages()
+        num_rows = 12
+        num_columns = 4
+
+        # Configure rows and columns
+        for i in range(num_rows):
+            root.grid_rowconfigure(i, weight=1)  # Adjust weight as needed
+        for j in range(num_columns):
+            root.grid_columnconfigure(j, weight=1)
+
+            self.create_pages()
 
     def create_pages(self):
         self.login_page = Login_page(self.root,

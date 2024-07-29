@@ -37,24 +37,29 @@ class Login_page:
             bg_color='white',
             font=('Arial', 12),
             width=200,
-            height=30
+            height=30,
+            placeholder_text='Username'
         )
-        username_entry.place(
-            x=150,
-            y=100,
+        username_entry.grid(
+            row=1,
+            column=4
         )
+
         password_entry = ctk.CTkEntry(
             master=self.login_frame,
             fg_color='black',
             bg_color='white',
             font=('Arial', 12),
             width=200,
-            height=30
+            height=30,
+            show='*',
+            placeholder_text='Password'
         )
-        password_entry.place(
-            x=150,
-            y=150,
+        password_entry.grid(
+            row=1,
+            column=6,
         )
+
         login_button = ctk.CTkButton(
             master=self.login_frame,
             text='Login',
@@ -65,9 +70,9 @@ class Login_page:
             width=100,
             height=30
         )
-        login_button.place(
-            x=150,
-            y=200,
+        login_button.grid(
+            row=1,
+            column=8
         )
 
     def login_button_clicked(self, username, password):
